@@ -1,6 +1,6 @@
 package models;
 
-public class Filme extends Titulo {
+public class Filme extends Titulo implements Classificacao {
     private String diretor;
 
     public String getDiretor() {
@@ -11,6 +11,11 @@ public class Filme extends Titulo {
         this.diretor = diretor;
     }
    
+    @Override
+    public int getEstrelas() {
+        return (int) pegaMedia() / 2;
+    }
+        
 } 
     
 

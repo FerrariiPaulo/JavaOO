@@ -1,10 +1,11 @@
 package models;
 
-public class Series extends Titulo {
+public class Series extends Titulo implements Classificacao {
     private int temporada;
     private int episodiosTemporada;
     private boolean ativa;
     private int minutosEpisodio;
+    private int totalVisualizacoes;
 
     public int getTemporada() {
         return temporada;
@@ -37,9 +38,26 @@ public class Series extends Titulo {
     public void setMinutosEpisodio(int minutosEpisodio) {
         this.minutosEpisodio = minutosEpisodio;
     }
+
+    public int getTotalVisualizacoes() {
+        return totalVisualizacoes;
+    }
+
+    public void setTotalVisualizacoes(int totalVisualizacoes) {
+        this.totalVisualizacoes = totalVisualizacoes;
+    }
     
     @Override
     public int getDuracaoMinutos() {        
         return temporada * episodiosTemporada * minutosEpisodio;
+    }
+
+    @Override
+    public int getEstrelas() {
+        if(totalVisualizacoes > 100) {
+            return 4;
+        } else {
+            return 2;
+        }
     }
 }

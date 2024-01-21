@@ -12,6 +12,14 @@ public class Titulo {
         return totalAvaliacoes;
     }
 
+    public void setTotalAvaliacoes(int totalAvaliacoes) {
+        this.totalAvaliacoes = totalAvaliacoes;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
     public void setNome(String nome){
         this.nome = nome;
     }
