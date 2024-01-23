@@ -7,6 +7,10 @@ public class Series extends Titulo implements Classificacao {
     private int minutosEpisodio;
     private int totalVisualizacoes;
 
+    public Series(String nome, int anoDeLancamento) {
+        super(nome, anoDeLancamento);
+    }
+
     public int getTemporada() {
         return temporada;
     }
