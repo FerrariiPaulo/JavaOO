@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import models.Filme;
 import models.Series;
@@ -24,5 +26,12 @@ public class listasMain {
         lista.add(house);
 
         lista.forEach(item -> System.out.println(item));
+
+        System.out.println("Ordenado por título");
+        Collections.sort(lista);
+        System.out.println(lista);
+        System.out.println("Ordenando por ano");
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println(lista);
     }
 }

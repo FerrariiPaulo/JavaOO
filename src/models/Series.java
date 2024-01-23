@@ -64,4 +64,11 @@ public class Series extends Titulo implements Classificacao {
             return 2;
         }
     }
+
+    
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return "Serie: " + this.getNome() + " (" + this.getAnoDeLancamento() + ")";
+    }
 }
