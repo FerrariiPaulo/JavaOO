@@ -3,5 +3,9 @@
         "src",
         ".",
         "models",
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\Pichau\\Desktop\\gson-2.10.1.jar"
     ]
 }

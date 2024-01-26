@@ -33,5 +33,8 @@ public class listasMain {
         System.out.println("Ordenando por ano");
         lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
         System.out.println(lista);
+
+       
+        
     }
 }
