@@ -2,10 +2,8 @@ package models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Titulo implements Comparable<Titulo> {
-    @SerializedName("Title")
-    public String nome;
-    @SerializedName("Year")
+public class Titulo implements Comparable<Titulo> {    
+    public String nome;   
     private int anoDeLancamento;
     private boolean incluidoPlano;
     private double somaAvaliacoes;
@@ -17,8 +15,11 @@ public class Titulo implements Comparable<Titulo> {
         this.anoDeLancamento = anoDeLancamento;
     }
 
-    public Titulo(TituloOmdb meTituloOmdb) {
+    public Titulo(TituloOmdb meTituloOmdb) {        
         this.nome = meTituloOmdb.title();
+        if(meTituloOmdb.year().length() > 4) {
+            throw new ErroDeConversaoDeAnoException("Não consegui converter o ano");
+        }
         this.anoDeLancamento = Integer.valueOf(meTituloOmdb.year());
         this.duracaoMinutos = Integer.valueOf(meTituloOmdb.runtime().substring(0, 2));
 
